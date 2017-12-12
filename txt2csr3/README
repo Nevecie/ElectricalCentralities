@@ -1,0 +1,23 @@
+//------------------------------------------------------------------
+Формат CSR3: матрица записывается в 3 строки (целочисленных вектора)
+values   - все ненулевые элементы и диагональные нулевые
+columns  - Element i of the integer array columns is the number of 
+  the column in A that contains the i-th value in the values array
+rowIndex - Element j of the integer array rowIndex gives the index 
+  of the element in the values array that is first non-zero element 
+  in a row j. 
+//------------------------------------------------------------------
+
+txt2csr3.sh - скрипт для преобразования симметричной матрицы из 
+  текстового формата "V_1 V_2 E_12" в формат CSR3. Строки в исходном 
+  файле должны быть отсортированы в лексикографическом порядке. На
+  диагонали могут быть нулевые и ненулевые элементы.
+ 
+Example_Graph.dat - исходный граф в формате "V_1 V_2 E_12" (номера 
+  вершин могут быть с пропусками)          
+Example_Key.dat - соответствие старых номеров вершин новым, чтобы 
+  они шли подряд без пропусков
+Example_Renumeration.sed - sed-команды для замены старых номеров 
+  на новые
+Example_RenumeratedGraph.dat - граф в формате "V_1 V_2 E_12" с новыми
+  номерами вершин
