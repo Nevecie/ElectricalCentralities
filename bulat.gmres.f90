@@ -30,7 +30,8 @@ NAMELIST /SIZES/ n, nonzero, delta, verbose, check, krylov,epsss, &
         & lfil,droptol,maxiter,iwk, fgraph, fvcr, fres  !namelist: чтобы считать все значения из файла, см. gmres.nml
 
 
-
+print*, 'Программа реализована в рамках проекта № 15-02-00352a "Конкурентные системы массового обслуживания", выполненного при поддержке Российского фонда фундаментальных исследований'
+print*
 
 open(42,file='gmres.nml')                  !открыть файл параметров
 read(42,SIZES)                             !читать параметры
